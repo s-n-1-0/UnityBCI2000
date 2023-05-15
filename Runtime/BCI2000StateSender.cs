@@ -10,7 +10,7 @@ public class BCI2000StateSender : MonoBehaviour, ISerializationCallbackReceiver
 {
 
 
-    [SerializeField] private GameObject BCIObject;
+    [SerializeField] public GameObject BCIObject;
 
     private UnityBCI2000 bci;
 
