@@ -14,6 +14,7 @@ public class UnityBCI2000 : MonoBehaviour
     public string OperatorPath;
     public string TelnetIp;
     public int TelnetPort;
+    public int Timeout = 1000;
     public bool DontStartModules;
     public string Module1 = "SignalGenerator";
     public string[] Module1Args;
@@ -62,6 +63,7 @@ public class UnityBCI2000 : MonoBehaviour
 
         bci.WindowVisible = 1;
         bci.OperatorPath = OperatorPath;
+        bci.Timeout = Timeout;
         if (!String.IsNullOrWhiteSpace(TelnetIp))
             bci.TelnetIp = TelnetIp;
         if (TelnetPort != 0)
