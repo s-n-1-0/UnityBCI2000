@@ -20,6 +20,11 @@ public class UnityBCI2000 : MonoBehaviour
     //public int TelnetPort;
     public int TelnetPort;
     /// <summary>
+    /// Send and recieve timeout in ms
+    /// If non-Unity modules take a long time to start, the connection will be terminated if this value is not adjusted.
+    /// </summary>
+    public int Timeout = 1000;
+    /// <summary>
     /// Don't start the Source, Processing, or Application modules when starting UnityBCI2000
     /// </summary>
     public bool DontStartModules;
@@ -260,6 +265,7 @@ public class UnityBCI2000 : MonoBehaviour
             bci.TelnetPort = TelnetPort;
         if (!String.IsNullOrWhiteSpace(LogFile))
             bci.LogFile = LogFile;
+        bci.Timeout = Timeout;
         bci.LogStates = LogStates;
         bci.LogPrompts = LogPrompts;
 
